@@ -12,7 +12,6 @@ public class EratosthensSieveRunner {
                 EratosthensSieve sieve = new EratosthensSieve(n);
                 sieve.findPrimeNumbers();
                 sieve.showPrimeNumbers();
-
                 break;
             }catch (Exception e) {
                 System.out.println(e.getMessage());

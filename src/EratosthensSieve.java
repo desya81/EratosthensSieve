@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class EratosthensSieve {
 
     public static final int P = 2;
-    private boolean [] primeNumbers;
+
+    private List<Integer> primeNumbers = new ArrayList<Integer>();
     private int n;
 
     public EratosthensSieve(int n) throws Exception {
@@ -20,30 +23,43 @@ public class EratosthensSieve {
      * Set result in private property
      */
     public void findPrimeNumbers(){
-        this.primeNumbers = new boolean[this.n];
+        boolean [] numbers = new boolean[this.n];
 
-        Arrays.fill(this.primeNumbers,true);
+        Arrays.fill(numbers,true);
 
-        this.primeNumbers[0]=this.primeNumbers[1]=false;
+        numbers[0]= numbers[1]=false;
 
-        for (int i=P; i<this.primeNumbers.length; i++) {
-            if(this.primeNumbers[i]) {
-                for (int j=P; i*j <this.primeNumbers.length; j++) {
-                    this.primeNumbers[i*j]=false;
+        for (int i = P; i< numbers.length; i++) {
+            if(numbers[i]) {
+                for (int j = P; i*j < numbers.length; j++) {
+                    numbers[i*j]=false;
                 }
             }
         }
+
+        for (int i = 0; i < numbers.length; i++){
+            if(numbers[i] == true){
+                this.primeNumbers.add(i);
+            }
+        }
+
     }
 
     /**
      * Print out result of finding values
      */
     public void showPrimeNumbers(){
-        for (int i = 0; i < this.primeNumbers.length; i++){
-            if(this.primeNumbers[i] == true){
-               System.out.print(i+ " ");
-            }
+        for(Integer i : this.primeNumbers){
+            System.out.print(i + " ");
         }
     }
 
+
+    /**
+     * Get result List
+     * @return
+     */
+    public List<Integer> getPrimeNumbers() {
+        return primeNumbers;
+    }
 }

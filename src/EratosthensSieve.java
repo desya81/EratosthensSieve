@@ -55,4 +55,11 @@ public class EratosthensSieve {
     }
 
 
+    /**
+     * Get result List
+     * @return
+     */
+    public List<Integer> getPrimeNumbers() {
+        return primeNumbers;
+    }
 }

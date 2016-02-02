@@ -23,7 +23,7 @@ public class EratosthensSieve {
      * Set result in private property
      */
     public void findPrimeNumbers(){
-        boolean [] numbers = new boolean[this.n];
+        boolean [] numbers = new boolean[this.n +1];
 
         Arrays.fill(numbers,true);
 

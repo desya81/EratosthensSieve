@@ -8,7 +8,7 @@ public class EratosthensSieveRunner {
         while(true){
 
             try{
-                int n = userPromt();
+                int n = userPrompt();
                 EratosthensSieve sieve = new EratosthensSieve(n);
                 sieve.findPrimeNumbers();
                 sieve.showPrimeNumbers();
@@ -24,7 +24,7 @@ public class EratosthensSieveRunner {
      * @return
      * @throws Exception
      */
-    private static int userPromt() throws Exception {
+    private static int userPrompt() throws Exception {
         System.out.println("Please, enter a number");
         final Scanner scanner = new Scanner(System.in);
         int value;
@@ -36,3 +36,5 @@ public class EratosthensSieveRunner {
         return value;
     }
 }
+
+
